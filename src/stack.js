@@ -39,6 +39,8 @@ class Stack {
   }
 
   pop() {
+    if (this.head === null) return undefined;
+
     const current = this.head;
     this.head = this.head.next;
     this.length--;
@@ -47,8 +49,7 @@ class Stack {
   }
 
   peek() {
-    throw new NotImplementedError("Not implemented");
-    // remove line with error and write your code here
+    return this.head.value;
   }
 }
 
