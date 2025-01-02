@@ -24,9 +24,18 @@ class Queue {
     return this.head;
   }
 
-  enqueue(/* value */) {
-    throw new NotImplementedError("Not implemented");
-    // remove line with error and write your code here
+  enqueue(value) {
+    const listNode = new ListNode(value);
+
+    if (this.head) {
+      this.tail.next = listNode;
+      this.tail = listNode;
+    } else {
+      this.head = listNode;
+      this.tail = listNode;
+    }
+
+    this.length++;
   }
 
   dequeue() {
